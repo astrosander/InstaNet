@@ -14,9 +14,6 @@ with open("trained_pickle\\G.pkl", "rb") as f:
 with open("trained_pickle\\node_sizes.pkl", "rb") as f:
     node_sizes = pickle.load(f)
 
-# print(node_sizes)
-print(max(node_sizes))
-
 for i in range(len(node_sizes)):
     if node_sizes[i] < 10: 
         node_sizes[i] *= 0.1
@@ -32,7 +29,7 @@ for i in range(len(node_colors)):
 max_color = max(node_colors)
 
 
-rcParams['figure.figsize'] = (24, 18)
+rcParams['figure.figsize'] = (12, 8)
     
 # Example of node drawing with the loaded layout
 
@@ -50,7 +47,7 @@ nx.draw_networkx_nodes(
     alpha=0.8
 )
 
-nx.draw_networkx_edges(G, pos, edge_color="#fffaf0", alpha=0.00589, width=0.5)
+nx.draw_networkx_edges(G, pos, edge_color="#d3d3d3", alpha=0.00589, width=0.5)
 
 plt.subplots_adjust(left=0, right=1, top=1, bottom=0)  # No margins
 plt.margins(0)  # Removes extra space around the plot
@@ -58,6 +55,6 @@ plt.margins(0)  # Removes extra space around the plot
 
 plt.axis("off")
 
-# plt.savefig("follower_graph_heatmap_nodes.png", dpi=300, bbox_inches='tight', facecolor='black', pad_inches=0)
+# plt.savefig("img\\follower_graph_heatmap_nodes.png", dpi=300, bbox_inches='tight', facecolor='black', pad_inches=0)
 
 plt.show()
